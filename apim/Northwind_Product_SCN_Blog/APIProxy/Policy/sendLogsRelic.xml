@@ -1,0 +1,19 @@
+<!-- this policy lets you call to an external service from your API flow -->
+<ServiceCallout async="true" continueOnError="true" enabled="true" xmlns="http://www.sap.com/apimgmt">
+	<!-- The request that gets sent from the API proxy flow to the external service -->
+<Request clearPayload="false" variable="newRelicRequest">
+        <Set>
+            <Headers>
+                <Header name="X-License-Key">Your-api-Key</Header>
+                <Header name="Content-Type">application/json</Header>
+            </Headers>
+         
+           <Payload contentType="application/json">{newRelicPayload}</Payload>
+            <Verb>POST</Verb>
+        </Set>
+    </Request>
+    <Response>newRelicResponse</Response>
+    <HTTPTargetConnection>
+        <URL>https://log-api.eu.newrelic.com/log/v1</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>
