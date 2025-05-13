@@ -1,2 +1,1 @@
-# sap-blogs
-sap-blogs
+# SAP Blogs
