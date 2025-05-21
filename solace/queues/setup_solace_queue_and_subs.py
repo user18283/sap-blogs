@@ -16,7 +16,7 @@ parser.add_argument('--url', required=True, help='SEMP URL')
 args = parser.parse_args()
 
 # Connection Properties
-SOLACE_BASE_URL = args.url
+SOLACE_BASE_URL = args.url #https://host:943/SEMP/v2
 SOLACE_USERNAME ="mission-control-manager"
 SOLACE_PASSWORD = args.password
 SOLACE_VPN = "test"
